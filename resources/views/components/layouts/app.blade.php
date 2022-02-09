@@ -105,7 +105,7 @@
                  x-transition:leave-start="opacity-100"
                  x-transition:leave-end="opacity-0">
                 <button
-                    class="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                        class="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                     <x-heroicon-o-x class="h-6 w-6 text-white"/>
                 </button>
             </div>
@@ -157,10 +157,10 @@
     </div>
     <div class="flex flex-col w-0 flex-1 overflow-hidden">
 
-        <div class="px-4 sm:px-6 2xl:px-8 flex items-center justify-between shadow">
+        <div class="px-4 sm:px-6 2xl:px-8 flex items-center justify-between shadow-md border-b z-10">
             <button
-                @click="mobileSidebarOpen = true"
-                class="my-1 shrink-0 -ml-2 h-10 w-10 inline-flex items-center justify-center rounded-md text-gray-500 hover:text-gray-900
+                    @click="mobileSidebarOpen = true"
+                    class="my-1 shrink-0 -ml-2 h-10 w-10 inline-flex items-center justify-center rounded-md text-gray-500 hover:text-gray-900
                     focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 2xl:hidden">
                 <x-heroicon-o-menu class="h-6 w-6"/>
             </button>
@@ -196,6 +196,10 @@
         </div>
 
         <main class="flex-1 relative z-0 overflow-y-auto focus:outline-none pb-12">
+
+            @isset($breadcrumbs)
+                {{ $breadcrumbs }}
+            @endisset
 
             {{ $slot }}
 
