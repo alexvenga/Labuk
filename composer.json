@@ -1,0 +1,53 @@
+{
+    "name": "alexvenga/labuk",
+    "description": "Laravel blade admin-panel components",
+    "keywords": [
+        "Blade",
+        "UI",
+        "Laravel"
+    ],
+    "homepage": "https://github.com/alexvenga/labuk",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/alexvenga/labuk/issues",
+        "source": "https://github.com/alexvenga/labuk"
+    },
+    "authors": [
+        {
+            "name": "AlexVenga",
+            "email": "bubnov.alexey@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "ext-json": "*",
+        "blade-ui-kit/blade-heroicons": "^1.3",
+        "illuminate/support": "^7.0|^8.0|^9.0",
+        "illuminate/view": "^7.0|^8.0|^9.0",
+        "livewire/livewire": "^2.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "AlexVenga\\Labuk\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AlexVenga\\Labuk\\LabukServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+    }
+}
