@@ -15,3 +15,6 @@
 @isset($paginator)
     {{ $paginator->links('labuk::table-pagination') }}
 @endif
+@isset($livewirePaginator)
+    {{ $livewirePaginator->links('labuk::table-livewire-pagination') }}
+@endif
