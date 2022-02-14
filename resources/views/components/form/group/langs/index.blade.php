@@ -1,7 +1,7 @@
 @props([
     'languages' => [],
 ])
-<div x-data="{ tab: 'en' }" class="my-4 -mr-2 -mb-2">
+<div x-data="{ tab: 'en' }" class="-mr-2 -mb-2">
 
     <nav class="flex flex-wrap -mr-1 -mb-1">
         @foreach($languages as $language)
