@@ -1,11 +1,11 @@
 @props([
     'languages' => [],
 ])
-<div x-data="{ tab: 'en' }" class="-mr-2 -mb-2">
+<div x-data="{ tab: 'en' }" {{ $attributes->merge(['class'=>'-mr-2 -mb-2']) }}>
 
-    <nav class="flex flex-wrap -mr-1 -mb-1">
+    <nav class="flex flex-wrap -mr-2 -mb-2">
         @foreach($languages as $language)
-            <x-labuk::button style="light" class="mr-1 mb-1" size="xs" href="#{{ $language['code'] }}"
+            <x-labuk::button style="light" class="mr-2 mb-2 relative" size="sm" href="#{{ $language['code'] }}"
                              x-bind:class="{ 'text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:ring-indigo-500': tab === '{{ $language['code'] }}' }"
                              @click.prevent="tab = '{{ $language['code'] }}'; window.location.hash = '{{ $language['code'] }}'">
                 @if($errors->has('*.'.$language['code']))
