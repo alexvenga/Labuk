@@ -1,5 +1,9 @@
 @props([
-    'id', 'maxWidth'])
+    'id',
+    'maxWidth',
+    'livewire'       => false,
+    'alpineOpenName' => null,
+    ])
 
 @php
     $maxWidth= match($maxWidth)
@@ -15,18 +19,26 @@
         '7xl'=>'sm:max-w-7xl',
         default=>'sm:max-w-2xl',
     };
+    if($livewire) {
+        $alpineOpenName = 'showModal';
+    }
+    if (!$alpineOpenName) {
+        throw new \Exception('Not set $alpineOpenName');
+    }
 @endphp
 
 <div class="fixed z-10 inset-0 overflow-y-auto"
-     x-data="{ showModal: @entangle($attributes->wire('model')) }"
-     @close.stop="showModal = false"
-     @keydown.escape.stop="showModal = false"
-     x-show="showModal" x-cloak>
+     @if($livewire)
+        x-data="{ showModal: @entangle($attributes->wire('model')) }"
+     @endif
+     @close.stop="{{ $alpineOpenName }} = false"
+     @keydown.escape.stop="{{ $alpineOpenName }} = false"
+     x-show="{{ $alpineOpenName }}" x-cloak>
 
     <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
 
-        <div x-show="showModal" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
-             x-on:click="showModal = false"
+        <div x-show="{{ $alpineOpenName }}" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+             x-on:click="{{ $alpineOpenName }} = false"
              x-transition:enter="ease-out duration-300"
              x-transition:enter-start="opacity-0"
              x-transition:enter-end="opacity-100"
@@ -38,7 +50,7 @@
 
         <span class="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>
 
-        <div x-show="showModal"
+        <div x-show="{{ $alpineOpenName }}"
              class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:w-full {{ $maxWidth }}"
              x-transition:enter="ease-out duration-300"
              x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"

@@ -20,13 +20,13 @@
         @endif
     </div>
 @else
-    <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start mt-4 sm:mt-0 {{ $paddingLess ? '' : 'sm:pt-5' }}">
+    <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-center mt-4 sm:mt-0 {{ $paddingLess ? '' : 'sm:pt-5' }}">
 
-        <label for="{{ $for }}" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+        <label for="{{ $for }}" class="block text-sm font-medium text-gray-700">
             {{ $label }}
         </label>
 
-        <div class="sm:col-span-2">
+        <div class="sm:col-span-2 mt-1 sm:mt-0">
 
             {{ $slot }}
 
