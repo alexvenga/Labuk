@@ -23,7 +23,7 @@
         $alpineOpenName = 'showModal';
     }
     if (!$alpineOpenName) {
-        throw new \Exception('Not set $alpineOpenName');
+        throw new \Exception('Not set $alpineOpenName or livewire="true"');
     }
 @endphp
 
