@@ -27,7 +27,7 @@
     }
 @endphp
 
-<div class="fixed z-20 inset-0 overflow-y-auto"
+<div class="fixed z-10 inset-0 overflow-y-auto"
      @if($livewire)
         x-data="{ showModal: @entangle($attributes->wire('model')) }"
      @endif
